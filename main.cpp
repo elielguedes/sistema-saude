@@ -19,13 +19,13 @@ int main()
 
     while (true)
     {
-        printf("\n --------- Sistema De Cadastro Medico ---------- \n");
-        printf("\n-----------------\n");
-        printf("1 -> cadastrar paciente\n");
+        printf("\n --------- Sistema De Atendimento Medico ---------- \n");
+        printf("\n ----------------- \n");
+        printf("1 -> Fila de atendimento\n");
         printf("2 -> historico\n");
         printf("3 -> horario\n");
         printf("4 -> sair\n");
-        printf("-----------------\n");
+        printf("\n -----------------\n");
 
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -35,7 +35,7 @@ int main()
             opcaof = 0;
             while (opcaof != 4)
             {
-                printf("\n -== Historico ==- \n");
+                printf("\n -== Fila(queue) ==- \n");
                 printf("\n =============== \n");
                 printf("\n 1 ----> Adicionar");
                 printf("\n 2 ----> Atender");
@@ -61,7 +61,7 @@ int main()
                         char removido[50];
                         dequeue(&fila, removido);
                         push(&h, removido);
-                        printf("\n Historico %s removido com sucesso !", removido);
+                        printf("\n paciente %s atendido com sucesso !", removido);
                     }
                     break;
 
