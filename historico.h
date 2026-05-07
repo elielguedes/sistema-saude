@@ -36,7 +36,7 @@ char pop(struct Historico *h, char nome[])
     }
     else
     {
-        strcpy(nome, h->paciente[h->top]);
+        strcpy(nome, h->paciente[--h->top]);
         h->qtdhisto--;
     }
 }
@@ -49,7 +49,7 @@ char MostrarHistorico(struct Historico *h)
     }
     for (int i = h->top; i >= 0; i--)
     {
-        printf("\n %s Historico de pacientes", h->paciente[i]);
+        printf("\n Paciente: %s", h->paciente[i]);
     }
 }
 

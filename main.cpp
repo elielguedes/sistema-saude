@@ -19,6 +19,7 @@ int main()
 
     while (true)
     {
+        printf("\n --------- Sistema De Cadastro Medico ---------- \n");
         printf("\n-----------------\n");
         printf("1 -> cadastrar paciente\n");
         printf("2 -> historico\n");
@@ -28,13 +29,13 @@ int main()
 
         printf("Opcao: ");
         scanf("%d", &opcao);
-
         switch (opcao)
         {
         case 1:
+            opcaof = 0;
             while (opcaof != 4)
             {
-
+                printf("\n -== Historico ==- \n");
                 printf("\n =============== \n");
                 printf("\n 1 ----> Adicionar");
                 printf("\n 2 ----> Atender");
@@ -73,6 +74,7 @@ int main()
                     break;
                 case 4:
                     printf("Saindo do menu...\n");
+                    opcaof = 4;
                     break;
                 default:
                     printf("\n opcao invalida tente novamente !");
@@ -80,14 +82,16 @@ int main()
             }
             break;
         case 2:
+            opcaop = 0;
             while (opcaop != 4)
             {
-                printf("\n =========== \n");
+                printf("\n -== Historico ==- \n");
+                printf("\n ================ \n");
                 printf("\n 1 --> Display");
                 printf("\n 2 --> Desfazer ");
                 printf("\n 3 --> Remover");
                 printf("\n 4 --> voltar");
-                printf("\n =========== \n ");
+                printf("\n =============== \n ");
 
                 printf("\n Digite opcao acime: ");
                 scanf("%d", &opcaop);
@@ -107,10 +111,12 @@ int main()
                     break;
                 case 3:
                     char remover[50];
-                    printf("\n === Deletar cadastro === \n");
                     pop(&h, remover);
+                    printf("\n === Paciente %s deletado === \n", remover);
                     break;
                 case 4:
+                    printf("\n Saindo.........");
+                    opcaop = 4;
                     break;
                 default:
                     printf("\n opcao invalida tente novamente !");
@@ -118,9 +124,9 @@ int main()
             }
             break;
         case 3:
-            int i = fila.ini;
             for (int cont = 0; cont < fila.qtd; cont++)
             {
+                int i = fila.ini;
                 printf("\n Paciente: %s || Horario: %s", fila.paciente[i], fila.horario[i]);
                 i++;
                 if (i == fila.capacidade)
@@ -129,6 +135,8 @@ int main()
                 }
             }
             break;
+        case 4:
+            return 0;
         }
     }
 }
