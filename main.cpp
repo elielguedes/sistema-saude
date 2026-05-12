@@ -52,6 +52,8 @@ int main()
                     {
                         printf("\n Digite nome do paciente: ");
                         scanf(" %49s", name);
+                        printf("\n Infome horario de atendimento: ");
+                        scanf(" %49s", &hora);
                         enqueue(&fila, name, hora);
                     }
                     break;
@@ -124,6 +126,7 @@ int main()
             }
             break;
         case 3:
+            printf("\n ---- Lista de atendimento ---- \n");
             for (int cont = 0; cont < fila.qtd; cont++)
             {
                 int i = fila.ini;
